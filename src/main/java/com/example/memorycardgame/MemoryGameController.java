@@ -31,8 +31,9 @@ public class MemoryGameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Card card = new Card("diamonds", "king");
-        imageView.setImage(card.getImage());
+        DeckOfCards deck = new DeckOfCards();
+        deck.shuffle();
+        imageView.setImage(deck.dealTopCard().getImage());
     }
 
 }
