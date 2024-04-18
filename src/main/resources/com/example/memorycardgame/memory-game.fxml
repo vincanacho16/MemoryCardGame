@@ -19,7 +19,7 @@
          <children>
             <FlowPane fx:id="imagesFlowPane" alignment="CENTER" hgap="20.0" vgap="20.0">
                <children>
-                  <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/3_of_hearts.png" />
                      </image>
