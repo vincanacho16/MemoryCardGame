@@ -49,7 +49,7 @@ public class MemoryGameController implements Initializable {
             // duplicate same cardDealt to get 10 cards, 5 unique
         }
         Collections.shuffle(cardsInGame);
-        System.out.println(cardsInGame);
+        flipAllCards();
     }
 
     @Override
