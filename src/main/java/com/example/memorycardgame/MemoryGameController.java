@@ -122,8 +122,10 @@ public class MemoryGameController implements Initializable {
     }
 
     private void resetLabels() {
-        correctGuessesLabel.setText(Integer.toString(0));
-        guessLabel.setText(Integer.toString(0));
+        numOfMatches = 0;
+        numOfGuess = 0;
+        correctGuessesLabel.setText(Integer.toString(numOfMatches));
+        guessLabel.setText(Integer.toString(numOfGuess));
     }
 
     private void checkForMatch() {
