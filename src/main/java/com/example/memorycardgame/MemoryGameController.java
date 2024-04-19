@@ -1,3 +1,4 @@
+
 package com.example.memorycardgame;
 
 import javafx.event.ActionEvent;
@@ -50,6 +51,7 @@ public class MemoryGameController implements Initializable {
         }
         Collections.shuffle(cardsInGame);
         flipAllCards();
+        resetLabels();
     }
 
     @Override
@@ -99,12 +101,13 @@ public class MemoryGameController implements Initializable {
             flipAllCards();
         }
         ImageView imageView = (ImageView) imagesFlowPane.getChildren().get(indexOfCard);
+        MemoryCard card = cardsInGame.get(indexOfCard);
 
-        if (firstCard == null) {
+        if (firstCard == null && (!card.isMatched())) {
             firstCard = cardsInGame.get(indexOfCard);
             imageView.setImage(firstCard.getImage());
         }
-        else if (secondCard == null) {
+        else if (secondCard == null && (!card.isMatched()) && card != firstCard) {
             numOfGuess++;
             secondCard = cardsInGame.get(indexOfCard);
             imageView.setImage(secondCard.getImage());
@@ -116,6 +119,11 @@ public class MemoryGameController implements Initializable {
     private void updateLabels() {
         correctGuessesLabel.setText(Integer.toString(numOfMatches));
         guessLabel.setText(Integer.toString(numOfGuess));
+    }
+
+    private void resetLabels() {
+        correctGuessesLabel.setText(Integer.toString(0));
+        guessLabel.setText(Integer.toString(0));
     }
 
     private void checkForMatch() {
