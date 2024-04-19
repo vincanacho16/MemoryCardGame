@@ -89,7 +89,7 @@ public class Card {
     }
 
     public Image getBackOfCardImage() {
-        return new Image(Card.class.getResourceAsStream("images/back_of_crd.png"));
+        return new Image(Card.class.getResourceAsStream("images/back_of_card.png"));
     }
 
 }
